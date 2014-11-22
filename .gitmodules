@@ -1,0 +1,3 @@
+[submodule "Submodules/BIGL"]
+	path = Submodules/BIGL
+	url = https://github.com/IGRSoft/BIGL.git
