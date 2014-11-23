@@ -30,56 +30,72 @@
 
 @implementation BICompressor
 
-- (id)initWithFile:(NSString*)file 
+- (id)initWithFile:(NSString*)file
 {
-	UInt32 magic = 'BIGe';
-    
-    magic = CFSwapInt32HostToBig(magic);
+	NSUInteger magic = 'BIGe';
+	
+	magic = CFSwapInt32HostToBig(magic);
 	
 	self = [super init];
-	if (!self) return nil;
+	if (!self)
+	{
+		return nil;
+	}
 	
 	_file = gzopen([[file standardPath] UTF8String], "wb");
-	if (!_file) 
-    {
+	if (!_file)
+	{
 		return nil;
 	}
-
-	if (gzwrite(_file, &magic, sizeof(magic)) != sizeof(magic)) 
-    {
+	
+	if (gzwrite(_file, &magic, sizeof(magic)) != sizeof(magic))
+	{
 		return nil;
 	}
-
+	
 	return self;
 }
 
-- (bool)addString:(NSString*)dataset 
+- (bool)addString:(NSString*)dataset
 {
-	UInt32 size = [dataset length];
-    
-    UInt32 sizeToWrite = CFSwapInt32HostToBig(size);
+	NSUInteger size = [dataset length];
 	
-	if (gzwrite(_file, &sizeToWrite, sizeof(sizeToWrite)) != sizeof(sizeToWrite)) return NO;
-	if (gzwrite(_file, (void*)[dataset UTF8String], size) != size) return NO;
+	NSUInteger sizeToWrite = CFSwapInt32HostToBig(size);
+	
+	if (gzwrite(_file, &sizeToWrite, sizeof(sizeToWrite)) != sizeof(sizeToWrite))
+	{
+		return NO;
+	}
+	if (gzwrite(_file, (void*)[dataset UTF8String], size) != size)
+	{
+		return NO;
+	}
 	
 	return YES;
 }
 
-- (bool)addData:(NSData*)dataset 
+- (bool)addData:(NSData*)dataset
 {
-	UInt32 size = [dataset length];
+	NSUInteger size = [dataset length];
 	
-    UInt32 sizeToWrite = CFSwapInt32HostToBig(size);
-        
-	if (gzwrite(_file, &sizeToWrite, sizeof(sizeToWrite)) != sizeof(sizeToWrite)) return NO;
-	if (gzwrite(_file, (void*)[dataset bytes], size) != size) return NO;
+	NSUInteger sizeToWrite = CFSwapInt32HostToBig(size);
+	
+	if (gzwrite(_file, &sizeToWrite, sizeof(sizeToWrite)) != sizeof(sizeToWrite))
+	{
+		return NO;
+	}
+	
+	if (gzwrite(_file, (void*)[dataset bytes], size) != size)
+	{
+		return NO;
+	}
 	
 	return YES;
 }
 
 - (void)close
 {
-    gzclose(_file);
+	gzclose(_file);
 }
 
 @end

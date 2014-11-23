@@ -30,28 +30,39 @@
 
 @implementation BIValuePair
 
-- (id)initWithCoder:(NSCoder *)coder {
+- (id)initWithCoder:(NSCoder *)coder
+{
     self = [self init];
-    if ( [coder allowsKeyedCoding] ) {
-        _x=[coder decodeDoubleForKey:@"x"];
-        _y=[coder decodeDoubleForKey:@"y"];
-    } else {
+    if ( [coder allowsKeyedCoding] )
+	{
+        _x = [coder decodeDoubleForKey:@"x"];
+        _y = [coder decodeDoubleForKey:@"y"];
+    }
+	else
+	{
         NSLog(@"Cannot decode this way");
     }
+	
     return self;
 }
 
-- (void)encodeWithCoder:(NSCoder *)coder {
-    if ([coder allowsKeyedCoding]) {
+- (void)encodeWithCoder:(NSCoder *)coder
+{
+    if ([coder allowsKeyedCoding])
+	{
         [coder encodeDouble:_x forKey:@"x"];
         [coder encodeDouble:_y forKey:@"y"];
-    } else {
+    }
+	else
+	{
         NSLog(@"Cannot encode this way");
     }
+	
     return;
 }
 
-- (id)initWithDataDictionary:(NSDictionary*)dict {
+- (id)initWithDataDictionary:(NSDictionary*)dict
+{
     self = [self init];
 	
 	_x = [dict[@"x"] doubleValue];
@@ -60,51 +71,67 @@
 	return self;
 }
 
-- (NSDictionary*)dataDictionary {
+- (NSDictionary*)dataDictionary
+{
 	return @{@"x": @(_x),
-		@"y": @(_y)};
+			 @"y": @(_y)};
 }
 
-+ (id)valuePairFromWaypoint:(waypoint)w {
++ (id)valuePairFromWaypoint:(waypoint)w
+{
     BIValuePair *vp = [[BIValuePair alloc] init];
     [vp setPairFromWaypoint:w];
+	
     return vp;
 }
 
-- (double)getX {
+- (double)getX
+{
     return _x;
 }
 
-- (double)getY {
+- (double)getY
+{
     return _y;
 }
 
-- (void)setPairX:(double)x Y:(double) y {
+- (void)setPairX:(double)x Y:(double) y
+{
     _x = x;
     _y = y;
 }
 
-- (void)setPairFromWaypoint:(waypoint)wp {
+- (void)setPairFromWaypoint:(waypoint)wp
+{
     _x = wp._long;
     _y = wp._lat;
 }
 
-- (waypoint)wayPoint {
-    waypoint w;
+- (waypoint)wayPoint
+{
+	waypoint w = {0.0};
+	
     w._long = _x;
     w._lat  = _y;
-    return w;
+	
+	return w;
 }
 
-- (id)copyWithZone:(NSZone *)zone {
+- (id)copyWithZone:(NSZone *)zone
+{
     BIValuePair *copy = [[BIValuePair allocWithZone:zone] init];
     [copy setPairX:_x Y:_y];
     
     return copy;
 }
 
-- (BOOL)isEqual:(id)anObject {
-    if ([self isMemberOfClass:[self class]] && ([anObject getX]==_x) && ([anObject getY]==_y)) return YES;
+- (BOOL)isEqual:(id)anObject
+{
+    if ([self isMemberOfClass:[self class]] && ([anObject getX]==_x) && ([anObject getY]==_y))
+	{
+		return YES;
+	}
+	
     return NO;
 }
 

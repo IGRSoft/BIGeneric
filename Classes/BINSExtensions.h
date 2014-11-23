@@ -30,29 +30,29 @@
 
 @interface NSWindow(BIExtension)
 
-- (int)showAlertMessage:(NSString *)msg title:(NSString *)title button:(NSString *)button;
+- (void)showAlertMessage:(NSString *)msg title:(NSString *)title button:(NSString *)button;
 
 @end
 
-@interface NSString(BIExtension) 
+@interface NSString(BIExtension)
 
 - (NSString*)standardPath;
 
 @end
 
-@interface NSNotificationCenter(BIExtension) 
+@interface NSNotificationCenter(BIExtension)
 
 + (void)postNotification:(NSString*)notificationName;
 
 @end
 
-@interface NSObject(BIExtension) 
+@interface NSObject(BIExtension)
 
 - (void)unsubscribeNotifications;
 
 @end
 
-@interface NSThread(BIExtension) 
+@interface NSThread(BIExtension)
 
 + (void)sleep:(NSTimeInterval)seconds;
 

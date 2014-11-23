@@ -30,7 +30,6 @@
 
 @interface BIToolbarView : NSView
 {
-
 }
 
 - (void)drawRect:(NSRect)rect;

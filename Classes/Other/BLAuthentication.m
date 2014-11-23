@@ -207,7 +207,7 @@ static BOOL su_AuthorizationExecuteWithPrivilegesAndWait(AuthorizationRef author
 	
 	if (su_AuthorizationExecuteWithPrivileges(authorization, executablePath, options, (char* const*)arguments) == errAuthorizationSuccess)
 	{
-		int status;
+		int status = 0;
 		pid_t pid = wait(&status);
 		if (pid == -1 || !WIFEXITED(status) || WEXITSTATUS(status) != 0)
         {
@@ -252,7 +252,7 @@ static BOOL su_AuthorizationExecuteWithPrivilegesAndWait(AuthorizationRef author
     {
 		res = YES;
 		const char** coParams = malloc(sizeof(char*) * [arguments count]);
-		int i = 0;
+		NSInteger i = 0;
 		for (NSString *arg in arguments)
         {
 			coParams[i++] = [arg UTF8String];

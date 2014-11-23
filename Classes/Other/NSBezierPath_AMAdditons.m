@@ -15,18 +15,22 @@
 {
 	NSBezierPath *result = [[NSBezierPath alloc] init];
 	[result appendBezierPathWithPlateInRect:rect];
+	
 	return result;
 }
 
 - (void)appendBezierPathWithPlateInRect:(NSRect)rect
 {
-	if (rect.size.height > 0) {
-		float xoff = rect.origin.x;
-		float yoff = rect.origin.y;
-		float radius = rect.size.height/2.0;
-		NSPoint point4 = NSMakePoint(xoff+radius, yoff+rect.size.height);
-		NSPoint center1 = NSMakePoint(xoff+radius, yoff+radius);
-		NSPoint center2 = NSMakePoint(xoff+rect.size.width-radius, yoff+radius);
+	if (rect.size.height > 0)
+	{
+		CGFloat xOff = rect.origin.x;
+		CGFloat yOff = rect.origin.y;
+		CGFloat radius = rect.size.height * 0.5;
+		
+		NSPoint point4 = NSMakePoint(xOff+radius, yOff+rect.size.height);
+		NSPoint center1 = NSMakePoint(xOff+radius, yOff+radius);
+		NSPoint center2 = NSMakePoint(xOff+rect.size.width-radius, yOff+radius);
+		
 		[self moveToPoint:point4];
 		[self appendBezierPathWithArcWithCenter:center1 radius:radius startAngle:90.0 endAngle:270.0];
 		[self appendBezierPathWithArcWithCenter:center2 radius:radius startAngle:270.0 endAngle:90.0];

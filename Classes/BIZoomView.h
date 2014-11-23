@@ -29,11 +29,13 @@
 #import <AppKit/AppKit.h>
 #import <BIGL/BIGL.h>
 
-@interface BIZoomView : BIGLView {
+@interface BIZoomView : BIGLView
+{
     NSView *_view;
     BIGLImageView *_v1, *_v2;
 }
 
 - (void)zoomFrom:(NSView*)oldV to:(NSView*)newV;
 - (void)cleanUpZoom;
+
 @end

@@ -30,62 +30,64 @@
 
 static BOOL _alertDone;
 
-@implementation NSWindow(BIExtension) 
+@implementation NSWindow(BIExtension)
 
-- (void)alertSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo {
-    _alertDone = YES;
+- (void)alertSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
+{
+	_alertDone = YES;
 }
 
-- (int)showAlertMessage:(NSString *)msg title:(NSString *)title button:(NSString *)button {
-    NSAlert *alert;
-    
-    alert = [[NSAlert alloc] init];
-    alert.messageText = title;
-    alert.informativeText = msg;
-    
-    [alert addButtonWithTitle:button];
-    [alert setAlertStyle:NSCriticalAlertStyle];
-    
-    __weak typeof(self) weakSelf = self;
-    [alert beginSheetModalForWindow:self completionHandler:^(NSModalResponse returnCode) {
-        [weakSelf alertSheetDidEnd:weakSelf returnCode:returnCode contextInfo:nil];
-    }];
-    
-    return 0;
+- (void)showAlertMessage:(NSString *)msg title:(NSString *)title button:(NSString *)button
+{
+	NSAlert *alert = [[NSAlert alloc] init];
+	alert.messageText = title;
+	alert.informativeText = msg;
+	
+	[alert addButtonWithTitle:button];
+	[alert setAlertStyle:NSCriticalAlertStyle];
+	
+	__weak typeof(self) weakSelf = self;
+	[alert beginSheetModalForWindow:self completionHandler:^(NSModalResponse returnCode) {
+		[weakSelf alertSheetDidEnd:weakSelf returnCode:returnCode contextInfo:nil];
+	}];
 }
 
 @end
 
-@implementation NSString(BIExtension) 
+@implementation NSString(BIExtension)
 
 - (NSString*)standardPath
 {
-    NSMutableString *path;
-    
-    if ([self length] > 2 && [[self substringToIndex:2] isEqualToString:@"/:"]) {
-        path = [NSMutableString stringWithString:[self substringFromIndex:1]];
-        [path replaceOccurrencesOfString:@"/" withString:@">" options:0 range:NSMakeRange(0, [path length])];
-        [path replaceOccurrencesOfString:@":" withString:@"/" options:0 range:NSMakeRange(0, [path length])];
-        [path replaceOccurrencesOfString:@">" withString:@":" options:0 range:NSMakeRange(0, [path length])];
-        
-        return path;
-    } else return [self stringByStandardizingPath];
+	if ([self length] > 2 && [[self substringToIndex:2] isEqualToString:@"/:"])
+	{
+		NSMutableString *path = [NSMutableString stringWithString:[self substringFromIndex:1]];
+		[path replaceOccurrencesOfString:@"/" withString:@">" options:0 range:NSMakeRange(0, [path length])];
+		[path replaceOccurrencesOfString:@":" withString:@"/" options:0 range:NSMakeRange(0, [path length])];
+		[path replaceOccurrencesOfString:@">" withString:@":" options:0 range:NSMakeRange(0, [path length])];
+		
+		return path;
+	}
+	
+	return [self stringByStandardizingPath];
 }
 
 @end
 
 
-@implementation NSNotificationCenter(BIExtension) 
+@implementation NSNotificationCenter(BIExtension)
 
-+ (void)postNotification:(NSString*)notificationName {
-    [[NSNotificationCenter defaultCenter] postNotificationName:notificationName object:nil];
++ (void)postNotification:(NSString*)notificationName
+{
+	[[NSNotificationCenter defaultCenter] postNotificationName:notificationName
+														object:nil];
 }
 
 @end
 
-@implementation NSObject(BIExtension) 
+@implementation NSObject(BIExtension)
 
-- (void)unsubscribeNotifications {
+- (void)unsubscribeNotifications
+{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -93,7 +95,8 @@ static BOOL _alertDone;
 
 @implementation NSThread(BIExtension) 
 
-+ (void)sleep:(NSTimeInterval)seconds {
++ (void)sleep:(NSTimeInterval)seconds
+{
     [NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:seconds]];
 }
 

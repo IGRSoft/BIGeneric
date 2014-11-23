@@ -30,7 +30,8 @@
 #import <AppKit/AppKit.h>
 #import "NSToolbar.h"
 
-@interface BIToolbar : NSToolbar {
+@interface BIToolbar : NSToolbar
+{
 }
 
 - (void)_setToolbarView:(id)view;

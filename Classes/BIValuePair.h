@@ -30,13 +30,14 @@
 
 typedef struct _waypoint
 {
-    double _lat;
-    double _long;
-    double _elevation;
+	double _lat;
+	double _long;
+	double _elevation;
 } waypoint;
 
-@interface BIValuePair : NSObject <NSCopying> {
-    double _x, _y;
+@interface BIValuePair : NSObject <NSCopying>
+{
+	double _x, _y;
 }
 
 + (id)valuePairFromWaypoint:(waypoint)w;
@@ -50,6 +51,5 @@ typedef struct _waypoint
 
 - (void)setPairX:(double)x Y:(double) y;
 - (void)setPairFromWaypoint:(waypoint)wp;
-
 
 @end

@@ -29,7 +29,8 @@
 #import <Foundation/Foundation.h>
 
 
-@interface BISpeechController : NSObject {
+@interface BISpeechController : NSObject
+{
     //sound and speech stuff
     long            _selectedVoiceID;
     long            _selectedVoiceCreator;
