@@ -1,13 +1,12 @@
 /*
  
-		File:			BIZoomView.h
-		Program:		BIGeneric
-		Author:			Michael Rossberg
-						mick@binaervarianz.de
-		Changes:        Vitalii Parovishnyk (Korich) 22.11.2014
-						http://igrsoft.com
+ File:			BIZoomView.m
+ Program:		BIGeneric
+ Author:		Michael Roßberg
+                mick@binaervarianz.de
+ Changes:       Vitalii Parovishnyk(1012-2015)
  
-	Description:	This framework provides abstract Cocoa methods to quickly draw 2D sprites
+ Description:	This framework provides abstract Cocoa methods to quickly draw 2D sprites
  
  This file is part of BIGL.
  

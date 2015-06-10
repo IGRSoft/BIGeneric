@@ -7,9 +7,6 @@
 //	Thanks to Brian R. Hill <http://personalpages.tds.net/~brian_hill/>		//
 //  ====================================================================== 	//
 
-#import <Cocoa/Cocoa.h>
-#import <Security/Authorization.h>
-
 @interface BLAuthentication : NSObject 
 {
 	AuthorizationRef authorizationRef; 

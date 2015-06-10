@@ -9,6 +9,7 @@
 //  ====================================================================== 	//
 
 #import "BLAuthentication.h"
+#import <Security/Authorization.h>
 #import <Security/AuthorizationTags.h>
 
 @implementation BLAuthentication

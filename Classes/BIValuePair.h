@@ -1,13 +1,12 @@
 /*
  
-		File:			BIValuePair.h
-		Program:		BIGeneric
-		Author:			Michael Rossberg
-						mick@binaervarianz.de
-		Changes:        Vitalii Parovishnyk (Korich) 22.11.2014
-						http://igrsoft.com
+ File:			BIValuePair.h
+ Program:		BIGeneric
+ Author:		Michael Ro§berg
+                mick@binaervarianz.de
+ Changes:       Vitalii Parovishnyk(1012-2015)
  
-	Description:	This framework provides abstract Cocoa methods to quickly draw 2D sprites
+ Description:	This framework provides abstract Cocoa methods to quickly draw 2D sprites
  
  This file is part of BIGL.
  
@@ -25,8 +24,6 @@
  along with BIGL; if not, write to the Free Software
  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
-
-#import <Foundation/Foundation.h>
 
 typedef struct _waypoint
 {

@@ -6,9 +6,6 @@
 //  Copyright (c) 2004 Andreas Mayer. All rights reserved.
 //
 
-#import <AppKit/AppKit.h>
-
-
 @interface NSBezierPath (AMAdditons)
 
 + (NSBezierPath *)bezierPathWithPlateInRect:(NSRect)rect;

@@ -1,13 +1,12 @@
 /*
  
-		File:			BNSToolbarView.h
-		Program:		BIGeneric
-		Author:			Michael Rossberg
-						mick@binaervarianz.de
-		Changes:        Vitalii Parovishnyk (Korich) 22.11.2014
-						http://igrsoft.com
+ File:			NSToolbarView.m
+ Program:		BIGeneric
+ Author:		Michael Roßberg
+                mick@binaervarianz.de
+ Changes:       Vitalii Parovishnyk(1012-2015)
  
-	Description:	This framework provides abstract Cocoa methods to quickly draw 2D sprites
+ Description:	This framework provides abstract Cocoa methods to quickly draw 2D sprites
  
  This file is part of BIGL.
  
@@ -26,9 +25,8 @@
  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include <AppKit/AppKit.h>
-
-struct __tbvFlags {
+struct __tbvFlags
+{
     unsigned int _layoutInProgress:1;
     unsigned int _sizingToFit:1;
     unsigned int _isEditing:1;
