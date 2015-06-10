@@ -56,7 +56,7 @@
 	return self;
 }
 
-- (bool)addString:(NSString*)dataset
+- (BOOL)addString:(NSString*)dataset
 {
 	NSUInteger size = [dataset length];
 	
@@ -74,7 +74,7 @@
 	return YES;
 }
 
-- (bool)addData:(NSData*)dataset
+- (BOOL)addData:(NSData*)dataset
 {
 	NSUInteger size = [dataset length];
 	

@@ -23,8 +23,6 @@
 		00C135760695B632004F02A8 /* BIGeneric.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C135750695B632004F02A8 /* BIGeneric.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00C136030695D1AA004F02A8 /* BIToolbarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C136010695D1AA004F02A8 /* BIToolbarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00C136040695D1AA004F02A8 /* BIToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C136020695D1AA004F02A8 /* BIToolbarView.m */; };
-		00C1368C0695E1DF004F02A8 /* NSToolbarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C1368B0695E1DF004F02A8 /* NSToolbarView.h */; };
-		00C1368F06960A97004F02A8 /* NSToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C1368E06960A97004F02A8 /* NSToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00F0FF6B06AD499B006D4119 /* BISpeechController.h in Headers */ = {isa = PBXBuildFile; fileRef = 00F0FF6906AD499B006D4119 /* BISpeechController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00F0FF6C06AD499B006D4119 /* BISpeechController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F0FF6A06AD499B006D4119 /* BISpeechController.m */; };
 		00F15E4406975F6A00AF33BA /* BIZoomView.h in Headers */ = {isa = PBXBuildFile; fileRef = 00F15E4206975F6A00AF33BA /* BIZoomView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,6 +33,7 @@
 		8DC2EF510486A6940098B216 /* BIGeneric_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF5E0370ADEE00C91783 /* BIGeneric_Prefix.pch */; settings = {ATTRIBUTES = (); }; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		A567EDD41A21E1BD00663A18 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A567EDD31A21E1BD00663A18 /* libz.dylib */; };
+		A5A6FA531B285B3A006B90E1 /* NSToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = A5A6FA521B285B3A006B90E1 /* NSToolbar.h */; };
 		A5BED1C21A210BD900023724 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5BED1C01A210BD900023724 /* InfoPlist.strings */; };
 		A5BED1EC1A210C4D00023724 /* BIGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5BED1EB1A210C4000023724 /* BIGL.framework */; };
 /* End PBXBuildFile section */
@@ -66,8 +65,6 @@
 		00C135750695B632004F02A8 /* BIGeneric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIGeneric.h; sourceTree = "<group>"; };
 		00C136010695D1AA004F02A8 /* BIToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIToolbarView.h; sourceTree = "<group>"; };
 		00C136020695D1AA004F02A8 /* BIToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIToolbarView.m; sourceTree = "<group>"; };
-		00C1368B0695E1DF004F02A8 /* NSToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSToolbarView.h; sourceTree = "<group>"; };
-		00C1368E06960A97004F02A8 /* NSToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSToolbar.h; sourceTree = "<group>"; };
 		00F0FF6906AD499B006D4119 /* BISpeechController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BISpeechController.h; sourceTree = "<group>"; };
 		00F0FF6A06AD499B006D4119 /* BISpeechController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BISpeechController.m; sourceTree = "<group>"; };
 		00F15E4206975F6A00AF33BA /* BIZoomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIZoomView.h; sourceTree = "<group>"; };
@@ -83,6 +80,7 @@
 		8DC2EF5B0486A6940098B216 /* BIGeneric.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BIGeneric.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52A0E26196C0E9200800C1B /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 		A567EDD31A21E1BD00663A18 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		A5A6FA521B285B3A006B90E1 /* NSToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSToolbar.h; sourceTree = "<group>"; };
 		A5BED1C11A210BD900023724 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A5BED1E61A210C4000023724 /* BIGL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BIGL.xcodeproj; path = Submodules/BIGL/BIGL.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,8 +172,7 @@
 				00F57B1906A87A0C0035AE2F /* BIValuePair.m */,
 				00F15E4206975F6A00AF33BA /* BIZoomView.h */,
 				00F15E4306975F6A00AF33BA /* BIZoomView.m */,
-				00C1368B0695E1DF004F02A8 /* NSToolbarView.h */,
-				00C1368E06960A97004F02A8 /* NSToolbar.h */,
+				A5A6FA521B285B3A006B90E1 /* NSToolbar.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -225,6 +222,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5A6FA531B285B3A006B90E1 /* NSToolbar.h in Headers */,
 				0090B74C07B29DE7005FEEB1 /* BIDecompressor.h in Headers */,
 				0090B6D407B29140005FEEB1 /* BICompressor.h in Headers */,
 				00F0FF6B06AD499B006D4119 /* BISpeechController.h in Headers */,
@@ -235,9 +233,7 @@
 				00C135650695B3B6004F02A8 /* BIToolbar.h in Headers */,
 				00C136030695D1AA004F02A8 /* BIToolbarView.h in Headers */,
 				00F15E4406975F6A00AF33BA /* BIZoomView.h in Headers */,
-				00C1368F06960A97004F02A8 /* NSToolbar.h in Headers */,
 				8DC2EF510486A6940098B216 /* BIGeneric_Prefix.pch in Headers */,
-				00C1368C0695E1DF004F02A8 /* NSToolbarView.h in Headers */,
 				004A8B74069EC85F00CC8FAB /* NSBezierPath_AMAdditons.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

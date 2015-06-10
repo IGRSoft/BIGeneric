@@ -131,7 +131,6 @@
 	delete [] data;
 	
 	return str;
-	
 }
 
 - (void)close

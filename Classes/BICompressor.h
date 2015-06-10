@@ -33,8 +33,8 @@
 }
 
 - (id)initWithFile:(NSString*)file;
-- (bool)addString:(NSString*)dataset;
-- (bool)addData:(NSData*)dataset;
+- (BOOL)addString:(NSString*)dataset;
+- (BOOL)addData:(NSData*)dataset;
 - (void)close;
 
 @end

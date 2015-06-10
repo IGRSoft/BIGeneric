@@ -103,15 +103,12 @@
     [_v1 setLocation:CGPointMake(0, _frame.size.height)];
     [_v2 setLocation:CGPointZero];
     [self display];
-    
 }
 
 - (void)cleanUpZoom
 {
     [self removeSubView:_v1];
     [self removeSubView:_v2];
-    
 }
-
 
 @end
