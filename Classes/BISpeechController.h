@@ -28,8 +28,8 @@
 @interface BISpeechController : NSObject
 {
     //sound and speech stuff
-    long            _selectedVoiceID;
-    long            _selectedVoiceCreator;
+    UInt32          _selectedVoiceID;
+    UInt32          _selectedVoiceCreator;
     SpeechChannel   _curSpeechChannel;
     NSMutableArray* _sentenceQueue;
     BOOL            _speakThread;

@@ -32,7 +32,7 @@
 
 - (id)initWithFile:(NSString*)file
 {
-	NSUInteger magic = 'BIGe';
+	uint32_t magic = 'BIGe';
 	
 	magic = CFSwapInt32HostToBig(magic);
 	
@@ -58,7 +58,7 @@
 
 - (BOOL)addString:(NSString*)dataset
 {
-	NSUInteger size = [dataset length];
+	uint32_t size = (uint32_t)[dataset length];
 	
 	NSUInteger sizeToWrite = CFSwapInt32HostToBig(size);
 	
@@ -76,7 +76,7 @@
 
 - (BOOL)addData:(NSData*)dataset
 {
-	NSUInteger size = [dataset length];
+	uint32_t size = (uint32_t)[dataset length];
 	
 	NSUInteger sizeToWrite = CFSwapInt32HostToBig(size);
 	

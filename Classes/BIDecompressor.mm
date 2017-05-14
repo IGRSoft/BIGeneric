@@ -32,7 +32,7 @@
 
 - (id)initWithFile:(NSString*)file
 {
-	NSUInteger magic = 0;
+	uint32_t magic = 0;
 	
 	self = [super init];
 	if (!self)
@@ -58,7 +58,7 @@
 
 - (NSString*)nextString
 {
-	NSUInteger size = 0;
+	uint32_t size = 0;
 	UInt8* data = 0;
 	NSString *str = @"";
 	
@@ -94,7 +94,7 @@
 
 - (NSData*)nextData
 {
-	NSUInteger size = 0, read = 0, thisRead = 1;
+	uint32_t size = 0, read = 0, thisRead = 1;
 	UInt8* data = 0;
 	NSData *str = nil;
 	

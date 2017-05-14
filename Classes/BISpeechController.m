@@ -66,7 +66,9 @@
 		_selectedVoiceID = theVoiceSpec.id;
 		
 		const void *keys[] =   { kSpeechVoiceID, kSpeechVoiceCreator };
-		const void *values[] = { _selectedVoiceID, _selectedVoiceCreator };
+        CFNumberRef voiceID = CFNumberCreate(0, kCFNumberSInt32Type, &_selectedVoiceID);
+        CFNumberRef voiceCreator = CFNumberCreate(0, kCFNumberSInt32Type, &_selectedVoiceCreator);
+		const void *values[] = { voiceID, voiceCreator };
 		CFDictionaryRef voiceDict = CFDictionaryCreate(NULL, keys, values, 2, NULL, NULL);
 		
 		NSAssert(SetSpeechProperty(_curSpeechChannel, kSpeechCurrentVoiceProperty, voiceDict) != incompatibleVoice, @"Voice is not compatible");

@@ -121,7 +121,7 @@ static OSStatus su_AuthorizationExecuteWithPrivileges(AuthorizationRef authoriza
     }
 	
 	// do the standard forking tango...
-	NSInteger delay = 1;
+	int delay = 1;
 	for (NSInteger n = 5;; n--, delay *= 2)
     {
 		switch (fork())
