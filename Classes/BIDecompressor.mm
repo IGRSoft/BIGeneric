@@ -77,7 +77,7 @@
 	}
 	
 	data = new UInt8[size+1];
-	if (gzread(_file, data, size) != (int)size)
+	if (gzread(_file, data, size) != (NSInteger)size)
 	{
 		NSLog(@"Damaged Dataset");
 		delete [] data;

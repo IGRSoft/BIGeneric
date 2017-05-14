@@ -32,7 +32,7 @@
 		00F57CC006A99EBA0035AE2F /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F57CBF06A99EBA0035AE2F /* Carbon.framework */; };
 		8DC2EF510486A6940098B216 /* BIGeneric_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF5E0370ADEE00C91783 /* BIGeneric_Prefix.pch */; settings = {ATTRIBUTES = (); }; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
-		A567EDD41A21E1BD00663A18 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A567EDD31A21E1BD00663A18 /* libz.dylib */; };
+		A519102D1EC8D04E005705DB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A519102C1EC8D04E005705DB /* libz.tbd */; };
 		A5A6FA531B285B3A006B90E1 /* NSToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = A5A6FA521B285B3A006B90E1 /* NSToolbar.h */; };
 		A5BED1C21A210BD900023724 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5BED1C01A210BD900023724 /* InfoPlist.strings */; };
 		A5BED1EC1A210C4D00023724 /* BIGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5BED1EB1A210C4000023724 /* BIGL.framework */; };
@@ -78,8 +78,8 @@
 		32DBCF5E0370ADEE00C91783 /* BIGeneric_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIGeneric_Prefix.pch; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* BIGeneric.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BIGeneric.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A519102C1EC8D04E005705DB /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		A52A0E26196C0E9200800C1B /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
-		A567EDD31A21E1BD00663A18 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A5A6FA521B285B3A006B90E1 /* NSToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSToolbar.h; sourceTree = "<group>"; };
 		A5BED1C11A210BD900023724 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A5BED1E61A210C4000023724 /* BIGL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BIGL.xcodeproj; path = Submodules/BIGL/BIGL.xcodeproj; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A567EDD41A21E1BD00663A18 /* libz.dylib in Frameworks */,
+				A519102D1EC8D04E005705DB /* libz.tbd in Frameworks */,
 				A5BED1EC1A210C4D00023724 /* BIGL.framework in Frameworks */,
 				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
 				002E7A8206A865D500C9D931 /* Security.framework in Frameworks */,
@@ -136,6 +136,7 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A519102C1EC8D04E005705DB /* libz.tbd */,
 				1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */,
 				1058C7B2FEA5585E11CA2CBB /* Other Frameworks */,
 			);
@@ -180,7 +181,6 @@
 		1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A567EDD31A21E1BD00663A18 /* libz.dylib */,
 				A5BED1E61A210C4000023724 /* BIGL.xcodeproj */,
 			);
 			name = "Linked Frameworks";
@@ -376,7 +376,6 @@
 					"-seg1addr",
 					0x11000000,
 				);
-				OTHER_LIBTOOLFLAGS = "-lcrypto";
 				PRODUCT_NAME = BIGeneric;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = YES;
@@ -424,7 +423,6 @@
 					"-seg1addr",
 					0x11000000,
 				);
-				OTHER_LIBTOOLFLAGS = "-lcrypto";
 				PRODUCT_NAME = BIGeneric;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = YES;

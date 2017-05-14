@@ -36,6 +36,6 @@
     NSLock*         _speakLock;
 }
 
-- (void)speakSentence:(CFStringRef)cSentence withVoice:(int)voice;
+- (void)speakSentence:(CFStringRef)cSentence withVoice:(NSInteger)voice;
 
 @end

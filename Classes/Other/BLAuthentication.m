@@ -60,7 +60,7 @@ static OSStatus su_AuthorizationExecuteWithPrivileges(AuthorizationRef authoriza
 	char **(^argVector)(const char *, const char *, const char *, char *const *) = ^char **(const char *bTrampoline, const char *bPath,
 																							const char *bMboxFdText, char *const *bArguments)
     {
-		int length = 0;
+		NSInteger length = 0;
 		if (bArguments)
         {
             length = sizeof(bArguments);
@@ -74,7 +74,7 @@ static OSStatus su_AuthorizationExecuteWithPrivileges(AuthorizationRef authoriza
 			args[2] = bMboxFdText;
 			if (bArguments)
             {
-				for (int n = 0; bArguments[n]; ++n)
+				for (NSInteger n = 0; bArguments[n]; ++n)
                 {
 					args[n + 3] = bArguments[n];
                 }
@@ -121,8 +121,8 @@ static OSStatus su_AuthorizationExecuteWithPrivileges(AuthorizationRef authoriza
     }
 	
 	// do the standard forking tango...
-	int delay = 1;
-	for (int n = 5;; n--, delay *= 2)
+	NSInteger delay = 1;
+	for (NSInteger n = 5;; n--, delay *= 2)
     {
 		switch (fork())
         {

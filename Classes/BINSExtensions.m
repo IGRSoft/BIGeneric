@@ -31,7 +31,7 @@ static BOOL _alertDone;
 
 @implementation NSWindow(BIExtension)
 
-- (void)alertSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
+- (void)alertSheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
 {
 	_alertDone = YES;
 }

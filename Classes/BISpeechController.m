@@ -49,7 +49,7 @@
 }
 
 //says a specific sentence
-- (void)doSpeakSentence:(CFStringRef)cSentence withVoice:(int)voice
+- (void)doSpeakSentence:(CFStringRef)cSentence withVoice:(NSInteger)voice
 {
 	VoiceSpec theVoiceSpec = {0};
 	
@@ -113,7 +113,7 @@
 }
 
 //adds a sentence tp the speak queue
-- (void)addSentenceToQueue:(CFStringRef)cSentence withVoice:(int)voice
+- (void)addSentenceToQueue:(CFStringRef)cSentence withVoice:(NSInteger)voice
 {
 	[_sentenceQueue addObject:(__bridge id)(cSentence)];
 	[_sentenceQueue addObject:@(voice)];
@@ -125,7 +125,7 @@
 }
 
 //tries to speak something. if it does not work => put it to the queue
-- (void)speakSentence:(CFStringRef)cSentence withVoice:(int)voice
+- (void)speakSentence:(CFStringRef)cSentence withVoice:(NSInteger)voice
 {
 	[_speakLock lock];
 	
