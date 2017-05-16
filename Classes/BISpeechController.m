@@ -98,7 +98,7 @@
 			
 			if (SpeechBusySystemWide() == 0)
 			{
-				s = _sentenceQueue[0];
+				s = _sentenceQueue.firstObject;
 				i = [_sentenceQueue[1] integerValue];
 				[self doSpeakSentence:(__bridge CFStringRef)s withVoice:i];
 				[_sentenceQueue removeObjectAtIndex:1];
